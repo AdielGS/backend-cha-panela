@@ -22,7 +22,7 @@ public class EventoController {
     @GetMapping("/numeros-disponiveis")
     public ResponseEntity<List<Integer>> getNumerosDisponiveis() {
         List<Integer> escolhidos = repository.findNumerosEscolhidos();
-        List<Integer> todos = IntStream.rangeClosed(1, 56).boxed().collect(Collectors.toList());
+        List<Integer> todos = IntStream.rangeClosed(1, 89).boxed().collect(Collectors.toList());
         todos.removeAll(escolhidos);
         return ResponseEntity.ok(todos);
     }
